@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Password Strength Checker</title>
+</head>
+
+<body>
+    <h1>Q5: Password Strength Checker Take password input and show: Weak (less than 6 chars) Medium (6–9 chars) Strong (10+ chars) When verify button is clicked</h1><br></br>
+    <h2 style="color: aquamarine;">password strength checker</h2><br>
+    <input type="password" id="password" placeholder="enter your password"><br>
+    <button onclick="checkStrength()">click here</button>
+    <p id="result"></p>
+
+    <script>
+        function checkStrength() {
+            let pwd = document.getElementById("password").value;
+            let length = pwd.length;
+            if (length < 6) {
+                document.getElementById("result").innerText = "weak";
+            }
+            if (length >= 6 && length <= 9) {
+                document.getElementById("result").innerText = "medium";
+            }
+            if (length >= 10) {
+                document.getElementById("result").innerText = "strong";
+            }
+        }
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Name Formatter Tool</title>
+</head>
+
+<body>
+    <h1>Name Formatter Tool Input a full name. On click, display: >Uppercase version >Lowercase version >Character count</h1>
+    <br>
+    <input type="text" id="nameInput" placeholder="enter your name"><br>
+    <button onclick="formatName()">click me</button>
+
+    <p id="upper"></p>
+    <p id="lower"></p>
+    <p id="count"></p>
+    <script>
+        function formatName() {
+            let name = document.getElementById("nameInput").value;
+
+            document.getElementById("upper").innerText = "upper case :" + name.toUpperCase();
+            document.getElementById("lower").innerText = "lower case :" + name.toLowerCase();
+            document.getElementById("count").innerText = "number of words :" + name.length;
+        }
+    </script>
+
+</body>
+
+</html>
