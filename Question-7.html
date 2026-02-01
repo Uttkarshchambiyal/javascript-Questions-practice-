@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Polling System</title>
+    <style>
+        .box {
+            display: flex;
+            flex-direction: column;
+            background-color: yellowgreen;
+            align-items: center;
+            width: 400px;
+            height: 400px;
+            border: 2px solid rgb(179, 179, 179);
+            margin: auto;
+        }
+        
+        h1 {
+            color: rgb(0, 106, 255);
+        }
+        
+        button {
+            color: blueviolet;
+            background-color: cornflowerblue;
+        }
+        
+        span {
+            color: tomato;
+            border: 1px solid rgba(254, 0, 0, 0.084);
+        }
+        
+        h3 {
+            color: chocolate;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <h1>vote your choice</h1>
+
+        <p>
+            Option A:
+            <button onclick="vote('A')">vote</button>
+            <span id="acount">0</span>
+        </p>
+        <p>
+            Option B:
+            <button onclick="vote('B')">vote</button>
+            <span id="bcount">0</span>
+        </p>
+        <p>
+            Option C:
+            <button onclick="vote('C')">vote</button>
+            <span id="ccount">0</span>
+        </p>
+
+        <h3 id="leader">leading option is : none</h3>
+    </div>
+    <script>
+        let a = 0,
+            b = 0,
+            c = 0;
+
+        function vote(option) {
+            if (option === 'A') a++;
+
+            else if (option === 'B') b++;
+
+            else if (option === 'C') c++;
+
+            document.getElementById("acount").innerText = a;
+            document.getElementById("bcount").innerText = b;
+            document.getElementById("ccount").innerText = c;
+
+            showleader();
+        }
+
+        function showleader() {
+            let mainleader;
+            if (a > b && a > c) {
+                mainleader = "A";
+            } else if (b > a && b > c) {
+                mainleader = "B";
+            } else if (c > a && c > b) {
+                mainleader = "C";
+            } else {
+                mainleader = "tie";
+            }
+            document.getElementById("leader").innerText = "leading option is " + mainleader;
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="number" id="readings" placeholder="enter your temprature">
+    <button onclick="temp()">enter</button>
+
+    <p id="cold"></p>
+    <p id="warm"></p>
+    <p id="hot"></p>
+    <script>
+        function temp() {
+            let value = Number(document.getElementById("readings").value);
+            if (value < 15) {
+                document.getElementById("cold").innerText = "the temprature is cold";
+            } else if (value >= 15 && value <= 30) {
+                document.getElementById("warm").innerText = "the temprature is warm";
+            } else {
+                document.getElementById("hot").innerText = "the temprature isn hot";
+            }
+
+        }
+    </script>
+</body>
+
+</html>
